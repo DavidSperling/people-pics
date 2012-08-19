@@ -1,0 +1,53 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  url: MyString
+  full_top: 1
+  full_bottom: 1
+  full_left: 1
+  full_right: 1
+  face_top: 1
+  face_bottom: 1
+  face_left: 1
+  face_right: 1
+  gender: MyString
+  age: 1
+  weight: 9.99
+  physique: 9.99
+  skin_color: MyString
+  race: MyString
+  hair_color: MyString
+  hair_length: MyString
+  hair_style: MyString
+  eye_color: MyString
+  clothes: MyString
+  makeup: MyString
+  accessories: MyString
+  emotion: MyString
+  tags: MyString
+
+two:
+  url: MyString
+  full_top: 1
+  full_bottom: 1
+  full_left: 1
+  full_right: 1
+  face_top: 1
+  face_bottom: 1
+  face_left: 1
+  face_right: 1
+  gender: MyString
+  age: 1
+  weight: 9.99
+  physique: 9.99
+  skin_color: MyString
+  race: MyString
+  hair_color: MyString
+  hair_length: MyString
+  hair_style: MyString
+  eye_color: MyString
+  clothes: MyString
+  makeup: MyString
+  accessories: MyString
+  emotion: MyString
+  tags: MyString

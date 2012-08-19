@@ -1,0 +1,69 @@
+<h1>Listing pics</h1>
+
+<table>
+  <tr>
+    <th>Url</th>
+    <th>Full top</th>
+    <th>Full bottom</th>
+    <th>Full left</th>
+    <th>Full right</th>
+    <th>Face top</th>
+    <th>Face bottom</th>
+    <th>Face left</th>
+    <th>Face right</th>
+    <th>Gender</th>
+    <th>Age</th>
+    <th>Weight</th>
+    <th>Physique</th>
+    <th>Skin color</th>
+    <th>Race</th>
+    <th>Hair color</th>
+    <th>Hair length</th>
+    <th>Hair style</th>
+    <th>Eye color</th>
+    <th>Clothes</th>
+    <th>Makeup</th>
+    <th>Accessories</th>
+    <th>Emotion</th>
+    <th>Tags</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @pics.each do |pic| %>
+  <tr>
+    <td><%= pic.url %></td>
+    <td><%= pic.full_top %></td>
+    <td><%= pic.full_bottom %></td>
+    <td><%= pic.full_left %></td>
+    <td><%= pic.full_right %></td>
+    <td><%= pic.face_top %></td>
+    <td><%= pic.face_bottom %></td>
+    <td><%= pic.face_left %></td>
+    <td><%= pic.face_right %></td>
+    <td><%= pic.gender %></td>
+    <td><%= pic.age %></td>
+    <td><%= pic.weight %></td>
+    <td><%= pic.physique %></td>
+    <td><%= pic.skin_color %></td>
+    <td><%= pic.race %></td>
+    <td><%= pic.hair_color %></td>
+    <td><%= pic.hair_length %></td>
+    <td><%= pic.hair_style %></td>
+    <td><%= pic.eye_color %></td>
+    <td><%= pic.clothes %></td>
+    <td><%= pic.makeup %></td>
+    <td><%= pic.accessories %></td>
+    <td><%= pic.emotion %></td>
+    <td><%= pic.tags %></td>
+    <td><%= link_to 'Show', pic %></td>
+    <td><%= link_to 'Edit', edit_pic_path(pic) %></td>
+    <td><%= link_to 'Destroy', pic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Pic', new_pic_path %>
