@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120819205655) do
+ActiveRecord::Schema.define(:version => 20120820020936) do
 
   create_table "pics", :force => true do |t|
     t.string   "url"
@@ -40,6 +40,9 @@ ActiveRecord::Schema.define(:version => 20120819205655) do
     t.string   "tags"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.integer  "height"
+    t.integer  "img_height"
+    t.integer  "img_width"
   end
 
 end
