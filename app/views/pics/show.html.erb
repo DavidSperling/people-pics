@@ -1,48 +1,20 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Url:</b>
-  <%= @pic.url %>
+<p id="notice">
+  <%= notice %>
 </p>
 
 <p>
-  <b>Full top:</b>
-  <%= @pic.full_top %>
+  <b>Image:</b>
+  <%= showPic(:pic => @pic) %>
 </p>
 
 <p>
-  <b>Full bottom:</b>
-  <%= @pic.full_bottom %>
+  <b>Face:</b>
+  <%= showPic(:pic => @pic, :crop => "face") %>
 </p>
 
 <p>
-  <b>Full left:</b>
-  <%= @pic.full_left %>
-</p>
-
-<p>
-  <b>Full right:</b>
-  <%= @pic.full_right %>
-</p>
-
-<p>
-  <b>Face top:</b>
-  <%= @pic.face_top %>
-</p>
-
-<p>
-  <b>Face bottom:</b>
-  <%= @pic.face_bottom %>
-</p>
-
-<p>
-  <b>Face left:</b>
-  <%= @pic.face_left %>
-</p>
-
-<p>
-  <b>Face right:</b>
-  <%= @pic.face_right %>
+  <b>Full Body:</b>
+  <%= showPic(:pic => @pic, :crop => "full") %>
 </p>
 
 <p>
@@ -119,7 +91,6 @@
   <b>Tags:</b>
   <%= @pic.tags %>
 </p>
-
 
 <%= link_to 'Edit', edit_pic_path(@pic) %> |
 <%= link_to 'Back', pics_path %>
