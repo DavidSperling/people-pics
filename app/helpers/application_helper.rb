@@ -56,6 +56,8 @@ module ApplicationHelper
   #               be used.
   # href        - If the image is used as a hyperlink, this is the target
   #               If this is undefined, the target will be the image's source
+  # id          - The html id that is given to the image.
+  #               If no value is supplied, the id will be "showPicImg"
   # link?       - True if the image is to be used as a hyperlink.
   #               If false or undefined, the image will not be a hyperlink.
   # newTab?     - True if the link should open in a new tab.
@@ -81,8 +83,6 @@ module ApplicationHelper
   #    <%= showPic(:pic @pic) %>
   #    <!-- Shows the entire image -->
   #
-  #    <%= showPic(@pic
-  #
   # Returns a string of html that shows the image on the page
   def showPic(options = {})  
     # Set default values
@@ -96,6 +96,7 @@ module ApplicationHelper
       :stretch? => false,
       :link? => false,
       :href => "",
+      :id => "showPicImg",
       :newTab? => false,
     }.merge(options)
     
@@ -112,6 +113,7 @@ module ApplicationHelper
     else
       href = pic.url
     end
+    id = params[:id]
     newTab = params[:newTab?]
     
     # Do some error handling
@@ -224,7 +226,7 @@ module ApplicationHelper
       output += ">"
     end
     output += "<div style=\"position:absolute;left:-#{left * widthScale}px;top:-#{top * heightScale}px;clip:rect(#{top * heightScale || 0}px,#{right * widthScale || 0}px,#{bottom * heightScale || 0}px,#{left * widthScale || 0}px);\">"
-    output += "<img src=\"#{pic.url}\" height=\"#{pic.img_height * heightScale}px\" width=\"#{pic.img_width * widthScale}px\">"
+    output += "<img src=\"#{pic.url}\" id=\"#{id} \"height=\"#{pic.img_height * heightScale}px\" width=\"#{pic.img_width * widthScale}px\">"
     output += "</div>"
     if link
       output += "</a>"
