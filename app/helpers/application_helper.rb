@@ -226,7 +226,7 @@ module ApplicationHelper
       output += ">"
     end
     output += "<div style=\"position:absolute;left:-#{left * widthScale}px;top:-#{top * heightScale}px;clip:rect(#{top * heightScale || 0}px,#{right * widthScale || 0}px,#{bottom * heightScale || 0}px,#{left * widthScale || 0}px);\">"
-    output += "<img src=\"#{pic.url}\" id=\"#{id} \"height=\"#{pic.img_height * heightScale}px\" width=\"#{pic.img_width * widthScale}px\">"
+    output += "<img src=\"#{pic.url}\" id=\"#{id}\" height=\"#{pic.img_height * heightScale}px\" width=\"#{pic.img_width * widthScale}px\">"
     output += "</div>"
     if link
       output += "</a>"
