@@ -11,6 +11,18 @@
     </div>
   <% end %>
 
+  <% content_for(:head) do %>
+  <%= javascript_include_tag "pics/_form" %>
+  <% end %>
+
+  <div class="display">
+    <% if @pic.url == nil || @pic.url == "" %>
+      <%= image_tag "/assets/rails.png", :id => "picDisplay" %>
+    <% else %>
+      <%= image_tag @pic.url, :id => "picDisplay" %>
+    <% end %>
+  </div>
+
   <div class="field">
     <%= f.label :url %><br />
     <%= f.text_field :url %>
