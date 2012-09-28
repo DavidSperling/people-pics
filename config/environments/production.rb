@@ -46,7 +46,7 @@ RailsRoot::Application.configure do
   # config.action_controller.asset_host = "http://assets.example.com"
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-  config.assets.precompile += %w( pics/_form.js jcrop/jquery.Jcrop.css jcrop/jquery.Jcrop.css )
+  config.assets.precompile += %w( pics/_form.js jcrop/jquery.Jcrop.css jcrop/jquery.Jcrop.js )
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
