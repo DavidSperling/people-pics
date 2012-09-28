@@ -1,5 +1,5 @@
 body {
-  background-color: #fff;
+  background-color: #088;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
@@ -43,6 +43,29 @@ div {
   padding: 2px;
   background-color: red;
   display: table;
+}
+
+div.wrapper {
+  width: 960px;
+  background-color: #FFFFFF;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  -moz-box-shadow:    3px 3px 5px 6px #066;
+  -webkit-box-shadow: 3px 3px 5px 6px #066;
+  box-shadow:         3px 3px 5px 6px #066;
+}
+
+div.spacer {
+  clear: both;
+  height: 10px;
+  display: block;
+  text-align: center;
+  padding: 2px;
 }
 
 #error_explanation {

@@ -1,3 +1,64 @@
 // Place all the styles related to the Pics controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.picFormLeftColumn {
+  width: 67%;
+  //border: 1px solid red;
+  background-color: #400;
+  padding: 16px;
+  float: left;
+  color: white;
+  text-align: center;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  white-space: nowrap;
+  -moz-box-shadow:    3px 3px 5px 6px #ccc;
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+  box-shadow:         3px 3px 5px 6px #ccc;
+}
+
+.picFormRightColumn {
+  width: 25%;
+  background-color: #040;
+  padding: 16px;
+  float: right;
+  color: white;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  text-align: right;
+  -moz-box-shadow:    3px 3px 5px 6px #ccc;
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+  box-shadow:         3px 3px 5px 6px #ccc;
+}
+
+.picFormImgBox {
+  width: auto;
+  background-color: #fff;
+  padding: 4px;
+  float: right;
+  text-align: right;
+}
+
+.leftTabWrapper {
+  width: auto;
+  background-color: #fff;
+  padding: 8px;
+  float: right;
+  color: black;
+  text-align: center;
+  -moz-border-radius-bottomleft: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.field input {
+    width: 100%;
+}
+
+hr {
+  color: #fff;
+  background-color: #fff;
+  border: none;
+  height: 2px;
+}
+
