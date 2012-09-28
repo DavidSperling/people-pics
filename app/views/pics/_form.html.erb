@@ -12,126 +12,152 @@
   <% end %>
 
   <% content_for(:head) do %>
+  <%= stylesheet_link_tag "jcrop/jquery.Jcrop" %>
+  <%= javascript_include_tag "jcrop/jquery.Jcrop" %>
   <%= javascript_include_tag "pics/_form" %>
   <% end %>
 
-  <div class="display">
-    <% if @pic.url == nil || @pic.url == "" %>
-      <%= image_tag "/assets/rails.png", :id => "picDisplay" %>
-    <% else %>
-      <%= image_tag @pic.url, :id => "picDisplay" %>
-    <% end %>
+  <div class="picFormLeftColumn ">
+    <p>
+      <div class="picFormImgBox" id="display">
+        <% if @pic.url == nil || @pic.url == "" %>
+          <%= image_tag "/assets/rails.png", :id => "picDisplay" %>
+        <% else %>
+          <%= image_tag @pic.url, :id => "picDisplay" %>
+        <% end %>
+      </div>
+    </p>
+    <div class="spacer"><p><hr></p></div>
+    <p>
+      <div class="picFormImgBox" id="faceDisplay">
+        <% if @pic.url == nil || @pic.url == "" %>
+          <%= image_tag "/assets/rails.png", :id => "facePic" %>
+        <% else %>
+          <%= image_tag @pic.url, :id => "facePic" %>
+        <% end %>
+      </div>
+      <div class="leftTabWrapper">
+        Crop this image<br>to a headshot.
+      </div>
+    </p>
+    <div class="spacer"><p><hr></p></div>
+    <p>
+      <div class="picFormImgBox" id="fullDisplay">
+        <% if @pic.url == nil || @pic.url == "" %>
+          <%= image_tag "/assets/rails.png", :id => "fullPic" %>
+        <% else %>
+          <%= image_tag @pic.url, :id => "fullPic" %>
+        <% end %>
+      </div>
+      <div class="leftTabWrapper">
+          Crop this image<br>to a full body shot.
+      </div>
+    </p>
   </div>
 
-  <div class="field">
-    <%= f.label :url %><br />
-    <%= f.text_field :url %>
+  <div class="picFormRightColumn">
+    <div class="field">
+      <%= f.label :url %><br />
+      <%= f.text_field :url %>
+    </div>
+    <div class="field">
+      <%= f.hidden_field :img_height %>
+    </div>
+    <div class="field">
+      <%= f.hidden_field :img_width %>
+    </div>
+    <div class="field">
+      <%= f.hidden_field :full_top %>
+    </div>
+    <div class="field">
+      <%= f.hidden_field :full_bottom %>
+    </div>
+    <div class="field">
+      <%= f.hidden_field :full_left %>
+    </div>
+    <div class="field">
+      <%= f.hidden_field :full_right %>
+    </div>
+    <div class="field">
+      <%= f.hidden_field :face_top %>
+    </div>
+    <div class="field">
+      <%= f.hidden_field :face_bottom %>
+    </div>
+    <div class="field">
+      <%= f.hidden_field :face_left %>
+    </div>
+    <div class="field">
+      <%= f.hidden_field :face_right %>
+    </div>
+    <div class="field">
+      <%= f.label :gender %><br />
+      <%= f.text_field :gender %>
+    </div>
+    <div class="field">
+      <%= f.label :age %><br />
+      <%= f.number_field :age %>
+    </div>
+    <div class="field">
+      <%= f.label :height %><br />
+      <%= f.number_field :height %>
+    </div>
+    <div class="field">
+      <%= f.label :weight %><br />
+      <%= f.text_field :weight %>
+    </div>
+    <div class="field">
+      <%= f.label :physique %><br />
+      <%= f.text_field :physique %>
+    </div>
+    <div class="field">
+      <%= f.label :skin_color %><br />
+      <%= f.text_field :skin_color %>
+    </div>
+    <div class="field">
+      <%= f.label :race %><br />
+      <%= f.text_field :race %>
+    </div>
+    <div class="field">
+      <%= f.label :hair_color %><br />
+      <%= f.text_field :hair_color %>
+    </div>
+    <div class="field">
+      <%= f.label :hair_length %><br />
+      <%= f.text_field :hair_length %>
+    </div>
+    <div class="field">
+      <%= f.label :hair_style %><br />
+      <%= f.text_field :hair_style %>
+    </div>
+    <div class="field">
+      <%= f.label :eye_color %><br />
+      <%= f.text_field :eye_color %>
+    </div>
+    <div class="field">
+      <%= f.label :clothes %><br />
+      <%= f.text_field :clothes %>
+    </div>
+    <div class="field">
+      <%= f.label :makeup %><br />
+      <%= f.text_field :makeup %>
+    </div>
+    <div class="field">
+      <%= f.label :accessories %><br />
+      <%= f.text_field :accessories %>
+    </div>
+    <div class="field">
+      <%= f.label :emotion %><br />
+      <%= f.text_field :emotion %>
+    </div>
+    <div class="field">
+      <%= f.label :tags %><br />
+      <%= f.text_field :tags %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :img_height %><br />
-    <%= f.number_field :img_height %>
-  </div>
-  <div class="field">
-    <%= f.label :img_width %><br />
-    <%= f.number_field :img_width %>
-  </div>
-  <div class="field">
-    <%= f.label :full_top %><br />
-    <%= f.number_field :full_top %>
-  </div>
-  <div class="field">
-    <%= f.label :full_bottom %><br />
-    <%= f.number_field :full_bottom %>
-  </div>
-  <div class="field">
-    <%= f.label :full_left %><br />
-    <%= f.number_field :full_left %>
-  </div>
-  <div class="field">
-    <%= f.label :full_right %><br />
-    <%= f.number_field :full_right %>
-  </div>
-  <div class="field">
-    <%= f.label :face_top %><br />
-    <%= f.number_field :face_top %>
-  </div>
-  <div class="field">
-    <%= f.label :face_bottom %><br />
-    <%= f.number_field :face_bottom %>
-  </div>
-  <div class="field">
-    <%= f.label :face_left %><br />
-    <%= f.number_field :face_left %>
-  </div>
-  <div class="field">
-    <%= f.label :face_right %><br />
-    <%= f.number_field :face_right %>
-  </div>
-  <div class="field">
-    <%= f.label :gender %><br />
-    <%= f.text_field :gender %>
-  </div>
-  <div class="field">
-    <%= f.label :age %><br />
-    <%= f.number_field :age %>
-  </div>
-  <div class="field">
-    <%= f.label :height %><br />
-    <%= f.number_field :height %>
-  </div>
-  <div class="field">
-    <%= f.label :weight %><br />
-    <%= f.text_field :weight %>
-  </div>
-  <div class="field">
-    <%= f.label :physique %><br />
-    <%= f.text_field :physique %>
-  </div>
-  <div class="field">
-    <%= f.label :skin_color %><br />
-    <%= f.text_field :skin_color %>
-  </div>
-  <div class="field">
-    <%= f.label :race %><br />
-    <%= f.text_field :race %>
-  </div>
-  <div class="field">
-    <%= f.label :hair_color %><br />
-    <%= f.text_field :hair_color %>
-  </div>
-  <div class="field">
-    <%= f.label :hair_length %><br />
-    <%= f.text_field :hair_length %>
-  </div>
-  <div class="field">
-    <%= f.label :hair_style %><br />
-    <%= f.text_field :hair_style %>
-  </div>
-  <div class="field">
-    <%= f.label :eye_color %><br />
-    <%= f.text_field :eye_color %>
-  </div>
-  <div class="field">
-    <%= f.label :clothes %><br />
-    <%= f.text_field :clothes %>
-  </div>
-  <div class="field">
-    <%= f.label :makeup %><br />
-    <%= f.text_field :makeup %>
-  </div>
-  <div class="field">
-    <%= f.label :accessories %><br />
-    <%= f.text_field :accessories %>
-  </div>
-  <div class="field">
-    <%= f.label :emotion %><br />
-    <%= f.text_field :emotion %>
-  </div>
-  <div class="field">
-    <%= f.label :tags %><br />
-    <%= f.text_field :tags %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="spacer">
+    <div class="actions">
+      <%= f.submit %>
+    </div>
   </div>
 <% end %>
